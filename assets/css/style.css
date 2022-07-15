@@ -339,3 +339,29 @@ a {
    justify-content: space-between;
    
 }
+.title-about{
+   margin-top: 40px;
+}
+.main-content-about{
+   max-width: 90%;
+   margin: 0 auto;
+   padding: 20px;
+}
+.container-about{
+
+margin-left: 100px;
+}
+.item-about{
+   margin: 20px;
+   padding: 20px;
+}.item-about img{
+   display: block;
+   width: 100%;
+}
+.box-img img{
+   border-radius: 50%;
+}
+.about-text{
+   margin-top: 20px;
+   margin-left: 40px;
+}
