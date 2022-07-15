@@ -1,6 +1,6 @@
 
 class User {
-    
+
     constructor() {
         this.localKey = 'tbl_users';
         this.admin = [{
@@ -61,7 +61,7 @@ class User {
     }
 
     check(index) {
-        if(index in this.data){
+        if (index in this.data) {
             this.userName = this.data[index].userName;
             this.fullName = this.data[index].fullName;
             this.email = this.data[index].email;
@@ -72,7 +72,7 @@ class User {
         }
         return false;
     }
-    update(index){
+    update(index) {
         this.data[index].userName = this.userName;
         this.data[index].fullName = this.fullName;
         this.data[index].email = this.email;
@@ -103,7 +103,7 @@ function register() {
     for (let key in objUser.data) {
         if (objUser.data[key].userName == objUser.userName || objUser.data[key].email == objUser.email) {
             document.querySelector('#userName').value = '',
-            document.querySelector('#fullName').value = '',
+                document.querySelector('#fullName').value = '',
                 document.querySelector('#password').value = '',
                 document.querySelector('#email').value = '',
                 document.querySelector('#day').value = '',
@@ -114,15 +114,15 @@ function register() {
         } else {
             objUser.add()
             document.querySelector('#userName').value = '',
-            document.querySelector('#fullName').value = '',
+                document.querySelector('#fullName').value = '',
                 document.querySelector('#password').value = '',
                 document.querySelector('#email').value = '',
                 document.querySelector('#day').value = '',
                 document.querySelector('#month').value = '',
                 document.querySelector('#year').value = '',
                 document.querySelector("input[name='sex']").value = '';
-             alert('đăng ký thành công')
-              return location.href = 'login.html'
+            alert('đăng ký thành công')
+            return location.href = 'login.html'
         }
     }
 }
@@ -157,7 +157,7 @@ function login() {
         alert('tài khoản mật khẩu không chính xác')
         document.querySelector('#userName').value = '';
         document.querySelector('#password').value = '';
-    } else{
+    } else {
         alert('vui lòng nhập tài khoản và mật khẩu trước khi đăng nhập')
     }
 }
@@ -176,64 +176,71 @@ function permission(index) {
         return false
     }
 }
-function editUser(index){
+function editUser(index) {
     let objUser = new User;
-    if(objUser.check(index)){
+    if (objUser.check(index)) {
         document.location.hash = '#edit'
         document.querySelector('#edit-userName').value = objUser.userName;
         document.querySelector('#edit-email').value = objUser.email;
-        document.querySelector('#btn-edit-user').setAttribute('data-index',index);
+        document.querySelector('#btn-edit-user').setAttribute('data-index', index);
     }
 }
-function updateUser(){
+function updateUser() {
     let objUser = new User;
     let index = document.querySelector('#btn-edit-user').getAttribute('data-index');
-    objUser.userName = document.querySelector('#edit-userName').value ;
-    objUser.email = document.querySelector('#edit-email').value ;
+    objUser.userName = document.querySelector('#edit-userName').value;
+    objUser.email = document.querySelector('#edit-email').value;
     objUser.update(index)
     location.hash = '#finish'
     showUser();
 }
-function remove(index){
+function remove(index) {
     let objUser = new User;
-    objUser.data.splice(index,1);
-    objUser.save();
-    showUser()
+    if (confirm('Bạn có muốn xóa user ??')) {
+        objUser.data.splice(index, 1);
+        objUser.save();
+        showUser()
+    }
+
 }
-function showUser(){
+function showUser() {
     let tableBody = document.querySelector('#tbUser tbody');
     let tr = ' ';
     let stt = 0
     let objUser = new User;
-    for(let key in objUser.data){
+    for (let key in objUser.data) {
         stt++
-       tr += '<tr>';
-       tr += '<td>'+stt+ '</td>'+'<td>'+objUser.data[key].userName+'</td>'+'<td>'+objUser.data[key].password+'</td>'+'<td>'+objUser.data[key].email+'</td>'+'<td>'+objUser.data[key].role+'</td>'+'<td>'+'<button class="buton" onclick="editUser('+key+')"> sửa </button>'+'<button class="buton" onclick="remove('+key+')"> xóa </button>'+'</td>'
-       tr += '</tr>'
+        tr += '<tr>';
+        tr += '<td>' + stt + '</td>' + '<td>' + objUser.data[key].userName + '</td>' + '<td>' + objUser.data[key].password + '</td>' + '<td>' + objUser.data[key].email + '</td>' + '<td>' + objUser.data[key].role + '</td>' + '<td>' + '<button class="buton" onclick="editUser(' + key + ')"> sửa </button>' + '<button class="buton" onclick="remove(' + key + ')"> xóa </button>' + '</td>'
+        tr += '</tr>'
     }
     tableBody.innerHTML = tr;
 }
-function showCompany(){
+function showCompany() {
     let table = document.querySelector('#tbl_showCompany tbody');
     let objUser = new User;
     let objBus = new Bus;
     let tr = '';
     let stt = 0;
     let count = 0;
-    for(let key in objBus.data){
-        if(objBus.data[key].status == 'đang hoạt động'){
+    for (let key in objBus.data) {
+        if (objBus.data[key].status == 'đang hoạt động') {
             count++;
         }
-    
     }
-    for(let key in objUser.data){
-    if(objUser.data[key].role == 'company'){
-        stt++;
-        tr+='<tr>';
-        tr+='<td>'+stt+'</td>'+'<td>'+objUser.data[key].fullName+'</td>'+'<td>'+objUser.data[key].email+'</td>'+'<td>'+count+'</td>';
-    }
+    for (let key in objUser.data) {
+        if (objUser.data[key].role == 'company') {
+            stt++;
+            tr += '<tr>';
+            tr += '<td>' + stt + '</td>' + '<td>' + objUser.data[key].fullName + '</td>' + '<td>' + objUser.data[key].email + '</td>' + '<td>' + count + '</td>';
+        }
     }
     table.innerHTML = tr;
 
 }
+function getOut(){
+    if(confirm('Hủy hợp đồng chứ ??')){
+        location.hash = 'admin.html'
+    }
 
+}
