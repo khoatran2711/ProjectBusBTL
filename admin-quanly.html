@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
     <script src="assets/js/bus.js"></script>
     <script src="assets/js/user.js"></script>
@@ -17,45 +19,47 @@
             </div>
             <div class="menu">
                 <ul class="bold-text">
-                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="admin.html">Company</a></li>
                     <li><a href="admin-quanly.html">Bus</a></li>
                     <li><a href="admin-quanLyUser.html">User</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="about.html">About</a></li>
                 </ul>
 
             </div>
         </div>
     </div>
     <div class="container-content admin-manager">
-        <div class="d-flex title-quanly">
-        <div class=" text-center decre-text">
+        <div class=" text-center decre-text upperCase">
             <h1></h1>
         </div>
-        <div class="button-invite" onclick="getOut()">
-            <strong><a href="#" class="full-width text-center ">Cắt hợp đồng</a></strong> 
-         </div>
+        <div class="d-flex title-quanly">
+
+            <div class="button-invite div-right" onclick="getOut()">
+                <strong><a href="#" class="full-width text-center ">Cắt hợp đồng</a></strong>
+            </div>
         </div>
-        
+
         <div class="content content-table">
-            <form class="full-width" >
-                <table id="shown-company-manager" style="width:100%" >
+            <form class="full-width">
+                <table id="shown-company-manager" style="width:100%">
                     <thead>
                         <th style="width:10%">STT</th>
                         <th style="width:15%;">Biển số</th>
                         <th style="width:20%">Trạng thái</th>
                         <th style="width:30%">Lái chính</th>
                         <th style="width:30%">Lái phụ</th>
-                        
+
                     </thead>
-                  <tbody></tbody>
+                    <tbody></tbody>
                 </table>
             </form>
-    
+
         </div>
     </div>
-   
+
     <script>
-show_company();
+        show_company();
     </script>
 </body>
+
 </html>

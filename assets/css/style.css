@@ -38,7 +38,9 @@ body {
 
 
 }
-
+.mt-50{
+   margin-top: 50px;
+}
 .container_header .menu {
    margin-left: 750px;
 }
@@ -239,9 +241,12 @@ button:focus-visible {
 }
 
 .decre-text {
-   background-color: yellow;
+   background-color: #E4CCF8;
+   color: #000;
    border-radius: 5px;
    padding: 10px;
+   max-width: 40%;
+   margin: 20px auto 0;
 }
 
 .button-option {
@@ -250,7 +255,7 @@ button:focus-visible {
 
 .title-quanly {
    max-width: 800px;
-   margin-top: 50px;
+
    margin-left: auto;
    margin-right: 80px;
    border-radius: 5px;
@@ -281,6 +286,8 @@ button:focus-visible {
 
 .input-lable {
    width: 80%;
+   border-radius: 7px;
+   border: none;
 }
 
 #add:target,#remove:target,#edit:target {
@@ -365,3 +372,25 @@ margin-left: 100px;
    margin-top: 20px;
    margin-left: 40px;
 }
+/* update */
+.btn-option{
+   justify-content: space-between;
+   align-items: center;
+}
+.pointer{
+   cursor: pointer;
+}
+.d-block{
+   display: block !important;
+}
+.add-btn{
+   text-align: center;
+   align-items: center;
+   text-decoration: none;
+   background-color: bisque;
+   color: #000;
+   font-weight: 600;
+   border-radius: 5px
+}
+.title-quanly{
+   justify-content: flex-end;}

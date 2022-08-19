@@ -1,4 +1,5 @@
-
+var $ = document.querySelector.bind(document);
+var $$ = document.querySelectorAll.bind(document);
 class Bus {
 
     constructor() {
@@ -133,7 +134,7 @@ function show() {
         let bus = objBus.data[key];
         tr += '<tr>';
         tr += '<td>' + stt + '</td><td>' + bus.ironNumber + '</td><td>' + bus.mainPeople + '</td><td>' + bus.seccondPeople + '</td><td>' + bus.status + '</td>';
-        tr += '<td><button type="button" onclick="edit(' + reverse_key + ')" class="btn-edit">Sửa</button><button type="button" onclick="destroy(' + reverse_key + ')" class="btn-delete">Xóa</button></td>';
+        tr += '<td><button type="button" onclick="edit(' + reverse_key + ')" class="btn-edit pointer">Sửa</button><button type="button" onclick="destroy(' + reverse_key + ')" class="btn-delete pointer">Xóa</button></td>';
         tr += '</tr>';
     }
     table.innerHTML = tr;
@@ -174,7 +175,7 @@ function showBus_manager() {
             stt++
             if (objBus.data[key].status === 'Chờ xét duyệt') {
                 tr += '<tr>';
-                tr += '<td>' + stt + '</td>' + '<td>' + objBus.data[key].ironNumber + '</td>' + '<td><button type="button" onclick ="acceptBus(' + key + ')">accept </button></td>' + '<td><button type="button" onclick ="acceptBus(' + key + ')">accept </button></td>';
+                tr += '<td>' + stt + '</td>' + '<td>' + objBus.data[key].ironNumber + '</td>' + '<td>'+objBus.data[key].status+'</td>' + '<td><button type="button" onclick ="acceptBus(' + key + ')">accept </button></td>';
                 tr += '</tr>';
 
             }
@@ -265,5 +266,8 @@ function show_company() {
     table.innerHTML = tr;
 
 }
+
+
+
 
 

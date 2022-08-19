@@ -15,12 +15,12 @@
             <div class="logo">
                 <a href="#"><img src="./assets/image/logo-xe-bus-3.png"> </a>
             </div>
-            <div class="menu">
+            <div class="bold-text menu">
                 <ul>
-                    <li><a href="home.html">Home</a></li>
+                    <li><a href="home.html">Company</a></li>
                     <li><a href="#">News</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="about.html">About</a></li>
 
                 </ul>
 
@@ -64,9 +64,11 @@
             <button  class="button-edit full-width" onclick="remove()">xóa</button>
         </div>
         <form class="full-width text-center">
-            <div class="col-4 button"><a href="page-company.html" class="button-option editButton full-width">Danh sách xe</a></div>
-            <div class="col-4 button" ><a href="#add" class="button-option addButton full-width " >Thêm xe</a></div>
-            <div class="col-4 button"><button onclick="delete_all()" class="button-option removeButton full-width" >Xóa tất cả</button></div>
+            <div class="btn-option d-flex">
+                <div class="col-4 button " ><a href="#add" class=" pointer add-btn button-option addButton full-width " >Thêm xe</a></div>
+            <div class="col-4 button "><button onclick="delete_all()" class="pointer button-option removeButton full-width" >Xóa tất cả</button></div>
+            </div>
+            
             <table style="width:100%" id="tblList">
                 <thead>
                     <th width="50">STT</th>
